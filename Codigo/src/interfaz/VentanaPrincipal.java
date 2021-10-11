@@ -1,5 +1,6 @@
 package interfaz;
 
+import control.GestorFiguras;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,11 +12,24 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Font;
+import java.util.ArrayList;
+import objetos.Cilindro;
+import objetos.Circulo;
+import objetos.Cono;
+import objetos.Cuadrado;
+import objetos.Cubo;
+import objetos.Figura;
+import objetos.Piramide;
+import objetos.Rectangulo;
+import objetos.Triangulo;
 
 /** 
  * Clase con la ventan principal del Act05
 */
 public class VentanaPrincipal extends JFrame implements ActionListener {
+    //Gestor
+    GestorFiguras gestor = new GestorFiguras();
+    
     //Letras
     private Font fBotones = new Font("Segoe UI",Font.PLAIN,18);
     private Font fTitulo = new Font("Segoe UI Light",Font.BOLD,25);
@@ -75,6 +89,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         botonRandomizador.setFont(fBotones);
         botonRandomizador.setBounds(480,645,160,30);
         botonRandomizador.setText("RANDOMIZAR");
+        botonRandomizador.addActionListener(this);
 
         //Visual
         scrollVisual.setBounds(10,45,365,630);
@@ -138,12 +153,71 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         this.add(Dibujo);
         
     }
+    
+    private ArrayList generarDatos(int num){
+        ArrayList datos = new ArrayList();
+        double random;
+        for(int i = 0; i<num; i++){
+            random = Math.random()*100+1;
+            datos.add(random);
+        }
+        return datos;
+    }
+    
+    private void crearFiguras(){
+        double randomMedida = 0;
+        ArrayList datos;
+        int random = (int)(Math.random()*(50-30+1)+30);
+        Figura nueva;
+        for(int i = 0; i<random; i++){
+            int randomTipo = (int)(Math.random()*8);
+            
+            if(randomTipo==0){
+                randomMedida = Math.random()*100+1;
+                nueva = new Cuadrado(randomMedida,i);
+            }else if(randomTipo==1){
+                datos = generarDatos(4);
+                nueva = new Triangulo((double)(datos.get(0)),(double)(datos.get(1)),
+                        (double)(datos.get(2)),(double)(datos.get(3)),i);
+            }else if(randomTipo==2){
+                datos = generarDatos(2);
+                nueva = new Rectangulo((double)(datos.get(0)),(double)(datos.get(1)),i);
+            }else if(randomTipo==3){
+                randomMedida = Math.random()*100+1;
+                nueva = new Circulo(randomMedida,i);
+            }else if(randomTipo==4){ 
+                datos = generarDatos(3);
+                nueva = new Piramide((double)(datos.get(0)),(double)(datos.get(1)),
+                        (double)(datos.get(2)),i);
+            }else if(randomTipo==5){
+                datos = generarDatos(2);
+                nueva = new Cono((double)(datos.get(0)),(double)(datos.get(1)),i);
+            }else if(randomTipo==6){
+                datos = generarDatos(2);
+                nueva = new Cilindro((double)(datos.get(0)),(double)(datos.get(1)),i);
+            }else{
+                randomMedida = Math.random()*100+1;
+                nueva = new Cubo(randomMedida,i);
+            }
+            System.out.println(nueva);
+            gestor.agregarFigura(nueva);
+        }
+    }
+    
+    private void llenarTextoTotal(){
+        
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(botonRandomizador)) {
-
+            crearFiguras();
         }
     }
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     
 }
