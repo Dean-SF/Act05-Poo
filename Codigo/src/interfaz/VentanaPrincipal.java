@@ -222,6 +222,15 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         }
     }
     
+    private void llenarTextoCilindros(){
+        for(Figura actual : gestor.getFiguras()){
+            if(actual instanceof Cilindro){
+                visualCilindros.append(actual.toString());
+                visualCilindros.append(""+'\n');
+            }
+        }
+    }
+    
     private void llenarDatosGenerales(){
         lF2D.setText("Figuras 2D: "+gestor.getCantidad2D());
         lF3D.setText("Figuras 3D: "+gestor.getCantidad3D());
@@ -259,6 +268,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         crearFiguras();
         llenarDatosGenerales();
         llenarTextoTotal();
+        llenarTextoCilindros();
     }
     
     @Override
