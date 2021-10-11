@@ -4,8 +4,8 @@ public class Rectangulo extends Bidimensional{
     private double largo;
     private double ancho;
 
-    public Rectangulo() {}
-
+    public Rectangulo() {
+    }
     public Rectangulo(double largo, double ancho, int codigo) {
         this.largo = largo;
         this.ancho = ancho;
@@ -17,21 +17,17 @@ public class Rectangulo extends Bidimensional{
     public void setLargo(double largo) {
         this.largo = largo;
     }
-
     public void setAncho(double ancho) {
         this.ancho = ancho;
     }
-
     @Override
     public void setArea(double area) {
         this.area = area;
     }
-
     @Override
     public void setPerimetro(double perimetro) {
         this.perimetro = perimetro;
     }
-
     @Override
     public void setCodigo(int codigo) {
         this.codigo = codigo;
@@ -40,23 +36,27 @@ public class Rectangulo extends Bidimensional{
     public double getLargo() {
         return largo;
     }
-
     public double getAncho() {
         return ancho;
     }
-
     @Override
     public double getArea() {
         return area;
     }
-
     @Override
     public double getPerimetro() {
         return perimetro;
     }
-
     @Override
     public int getCodigo() {
         return codigo;
     }
+
+    @Override
+    public String toString() {
+        return "Resctangulo: [ Codigo-> "+codigo+", Perimetro-> "+perimetro+
+                ", Area-> "+area+", Largo-> "+largo+", Ancho-> "+ancho+" ].";
+    }
+    
+    
 }
