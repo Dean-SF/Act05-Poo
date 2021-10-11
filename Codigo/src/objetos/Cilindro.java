@@ -31,11 +31,11 @@ public class Cilindro extends Tridimensional{
     
     @Override
     public String toString() {
-        return "Cilindro: " +   " Radio: " + this.radio +
+        return "Cilindro: [" +   " Radio: " + this.radio +
                                 ", Altura: " + altura +
                                 ", Area : " + this.getArea() +
                                 ", Perimetro: " + getPerimetro() +
-                                ", Tipo: 3D"+'\n';
+                                ", Tipo: 3D"+" ]."+'\n';
     }
   
     public void setRadio(double radio) {
