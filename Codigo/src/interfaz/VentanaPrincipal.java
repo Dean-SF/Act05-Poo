@@ -13,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Font;
 import java.util.ArrayList;
-import java.util.HashSet;
 import objetos.Cilindro;
 import objetos.Circulo;
 import objetos.Cono;
@@ -29,7 +28,7 @@ import objetos.Triangulo;
 */
 public class VentanaPrincipal extends JFrame implements ActionListener {
     //Gestor
-    GestorFiguras gestor = new GestorFiguras();
+    private GestorFiguras gestor = new GestorFiguras();
     private int cantidadId = 1;
     
     //Letras
