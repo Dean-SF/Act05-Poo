@@ -56,8 +56,11 @@ public class Rectangulo extends Bidimensional{
 
     @Override
     public String toString() {
-        return "Resctangulo: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
-                ", Area-> "+round(area*100)/100d+", Largo-> "+largo+", Ancho-> "+ancho+", Tipo: 2D"+" ].";
+        return "Resctangulo: [ Codigo-> "+codigo+
+                ", Perimetro-> "+round(perimetro*100)/100d+
+                ", Area-> "+round(area*100)/100d+", Largo-> "+largo+
+                ", Ancho-> "+ancho+
+                ", Tipo: 2D ]."+'\n';
     }
     
     

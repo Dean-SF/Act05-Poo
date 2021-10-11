@@ -207,7 +207,10 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     }
     
     private void llenarTextoTotal(){
-        
+        for(Figura actual : gestor.getFiguras()){
+            visualFiguras.append(actual.toString());
+            visualFiguras.append(""+'\n');
+        }
     }
     
     private void llenarDatosGenerales(){
@@ -246,6 +249,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     private void actualizar(){
         crearFiguras();
         llenarDatosGenerales();
+        llenarTextoTotal();
     }
     
     @Override

@@ -83,6 +83,6 @@ public class Triangulo extends Bidimensional{
                 ", Base-> "+redondear(base)+
                 ", Altura-> "+redondear(altura)+
                 ", Lados-> "+redondear(lado2)+" y "+redondear(lado3)+
-                ", Tipo: 2D"+" ].";
+                ", Tipo: 2D ]."+'\n';
     }
 }
