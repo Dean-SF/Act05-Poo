@@ -46,6 +46,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     private JSeparator hSeparador1 = new JSeparator(SwingConstants.HORIZONTAL);
 
     private JLabel lDibujo = new JLabel("Figura 2D con más ejemplares:");
+    private Dibujo Dibujo = new Dibujo();
 
     private JSeparator vSeparador2 = new JSeparator(SwingConstants.VERTICAL);
 
@@ -100,7 +101,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 
         lDibujo.setBounds(390,350,500, 33);
         lDibujo.setFont(fTitulo);
-
+        Dibujo.setBounds(390, 390, 300, 300);
+        
         vSeparador2.setBounds(740,10,60,665);
 
         lDetalleTriangulo.setFont(fTitulo);
@@ -118,6 +120,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         visualCilindros.setWrapStyleWord(true);
         visualCilindros.setEditable(false);;
         scrollCilindros.setBounds(750,385,275,290);
+        
 
         this.add(botonRandomizador);
         this.add(lFiguras);
@@ -132,6 +135,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         this.add(hSeparador2);
         this.add(lDetalleCilindros);
         this.add(scrollCilindros);
+        this.add(Dibujo);
         
     }
     @Override
@@ -140,4 +144,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 
         }
     }
+
+    
 }
