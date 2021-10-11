@@ -210,6 +210,15 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         for(Figura actual : gestor.getFiguras()){
             visualFiguras.append(actual.toString());
             visualFiguras.append(""+'\n');
+            
+            if(actual instanceof Triangulo){
+                visualTriangulo.append(actual.toString());
+                visualTriangulo.append(""+'\n');
+            
+            }else if(actual instanceof Cilindro){
+                visualCilindros.append(actual.toString());
+                visualCilindros.append(""+'\n');
+            }
         }
     }
     
