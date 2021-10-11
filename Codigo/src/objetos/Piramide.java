@@ -11,33 +11,40 @@ import static java.lang.Math.sqrt;
  * @author davidmorales
  */
 public class Piramide extends Tridimensional{
-        private double altura;
-        private double ha;// esto es la altura del lado
-        private double lado;
-        private double inclinacion;
-        public Piramide(){}
-        public Piramide(double altura,double lado,double inclinacion,int codigo) {
-            this.altura = altura;
-            this.lado = lado;
-            this.inclinacion = inclinacion;
-            this.ha = sqrt(pow(altura,2) + pow(this.lado/2, 2.0));// formula para averiguar la altura del lado
-            super.area = (this.lado * this.lado) + (2*this.lado * ha);
-            super.perimetro = (this.lado * 4) + (inclinacion * 4);
-            super.codigo = codigo;
-        }
-        @Override
-        public String toString() {
-            return "Piramide: " + "Lado: " + lado + 
-                             ", Area: " + this.getArea()+
-                             ", Perimetro: "+ this.getPerimetro() + 
-                             ", Tipo: 3D" + '\n';
-        }
-        public void setAltura(double altura) {
-            this.altura = altura;
-        }
-        public void setLado(double lado) {
+    private double altura;
+    private double ha;// esto es la altura del lado
+    private double lado;
+    private double inclinacion;
+    public Piramide() {
+
+    }
+
+    public Piramide(double altura,double lado,double inclinacion,int codigo) {
+        this.altura = altura;
+        this.lado = lado;
+        this.inclinacion = inclinacion;
+        this.ha = sqrt(pow(altura,2) + pow(this.lado/2, 2.0));// formula para averiguar la altura del lado
+        super.area = (this.lado * this.lado) + (2*this.lado * ha);
+        super.perimetro = (this.lado * 4) + (inclinacion * 4);
+        super.codigo = codigo;
+    }
+
+    @Override
+    public String toString() {
+        return "Piramide: " + "Lado: " + lado + 
+                            ", Area: " + this.getArea()+
+                            ", Perimetro: "+ this.getPerimetro() + 
+                            ", Tipo: 3D" + '\n';
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public void setLado(double lado) {
         this.lado = lado;
     }
+
    @Override
     public void setArea(double area) {
         super.area = area;
@@ -72,7 +79,7 @@ public class Piramide extends Tridimensional{
         return codigo;
     }
     public double getAltura() {
-            return altura;
-        }
+        return altura;
+    }
 
 }
