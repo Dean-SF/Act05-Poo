@@ -12,6 +12,7 @@ import static java.lang.Math.pow;
 public class Cilindro extends Tridimensional{
     private double altura;
     private double radio;
+    public Cilindro(){}
     public Cilindro(double radio, double altura,int codigo) {
         
         this.radio = radio;  

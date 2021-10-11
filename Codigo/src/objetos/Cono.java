@@ -12,6 +12,7 @@ import static java.lang.Math.pow;
 public class Cono extends Tridimensional{
     private double inclinacion;
     private double radio;
+    public Cono(){}
     public Cono(double radio, double inclinacion,int codigo) {
         
         this.radio = radio; 

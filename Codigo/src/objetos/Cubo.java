@@ -13,6 +13,7 @@ import static java.lang.Math.pow;
  */
 public class Cubo extends Tridimensional{
     private double lado;
+    public Cubo(){}
     public Cubo(double lado, int codigo) {
         this.lado = lado;
         super.area = pow(lado,2) * 6;

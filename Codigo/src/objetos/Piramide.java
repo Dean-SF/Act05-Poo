@@ -13,6 +13,7 @@ public class Piramide extends Tridimensional{
         private double altura;
         private double ha;
         private double lado;
+        public Piramide(){}
         public Piramide(double altura,double lado,int codigo) {
             this.altura = altura;
             this.lado = lado;
