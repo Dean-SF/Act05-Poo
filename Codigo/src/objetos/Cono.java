@@ -24,7 +24,8 @@ public class Cono extends Tridimensional{
     
     @Override
     public String toString() {
-        return "Cono: [" +   " Radio: " + this.radio +
+        return "Cono: [" +  "Codigo-> "+codigo+ 
+                            ", Radio: " + this.radio +
                             ", Inclinación: " + inclinacion +
                             ", Area: " + this.getArea() + 
                             ", Perimetro: " + getPerimetro() +
