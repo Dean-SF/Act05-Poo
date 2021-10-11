@@ -4,6 +4,8 @@ import static java.lang.Math.pow;
 public class Cuadrado extends Bidimensional{
    private double lado;
    
+   public Cuadrado(){};
+   
    public Cuadrado(double lado, int codigo){
        this.lado = lado;
        super.area = pow(lado,2);
@@ -36,7 +38,7 @@ public class Cuadrado extends Bidimensional{
 
    @Override
     public double getArea() {
-        return super.area;
+        return area;
     }
 
    @Override
