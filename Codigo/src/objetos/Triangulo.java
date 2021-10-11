@@ -10,7 +10,7 @@ public class Triangulo extends Bidimensional{
 
     public Triangulo() {
     }
-    public Triangulo(double base, double lado2, double lado3, double altura, int coodigo) {
+    public Triangulo(double base, double lado2, double lado3, double altura, int codigo) {
         this.base = base;
         this.lado2 = lado2;
         this.lado3 = lado3;
@@ -69,11 +69,17 @@ public class Triangulo extends Bidimensional{
     public int getCodigo() {
         return codigo;
     }
+    
+    public double redondear(double num){
+        double nuevo = round(num*100)/100d;
+        return nuevo;
+    } 
 
     @Override
     public String toString() {
         return "Triangulo: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
-                ", Area-> "+round(area*100)/100d+", Base-> "+base+", Altura-> "+altura+
-                ", Lados-> "+lado2+"-"+lado3+", Tipo: 2D"+" ].";
+                ", Area-> "+round(area*100)/100d+", Base-> "+round(base*100)/100d+
+                ", Altura-> "+round(altura*100)/100d+
+                ", Lados-> "+round(lado2*100)/100d+" y "+round(lado3*100)/100d+", Tipo: 2D"+" ].";
     }
 }
