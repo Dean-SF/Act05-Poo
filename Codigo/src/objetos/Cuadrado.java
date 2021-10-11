@@ -4,7 +4,7 @@ import static java.lang.Math.pow;
 public class Cuadrado extends Bidimensional{
    private double lado;
    
-   public void Cuadrado(double lado, int codigo){
+   public Cuadrado(double lado, int codigo){
        this.lado = lado;
        super.area = pow(lado,2);
        super.perimetro = lado*lado;
