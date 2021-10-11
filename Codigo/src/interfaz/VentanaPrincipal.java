@@ -208,10 +208,19 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         
     }
     
+    private void llenarDatosGenerales(){
+        System.out.println("a");
+    }
+    
+    private void actualizar(){
+        crearFiguras();
+        llenarDatosGenerales();
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(botonRandomizador)) {
-            crearFiguras();
+            actualizar();
         }
     }
 }
