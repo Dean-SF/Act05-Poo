@@ -1,5 +1,7 @@
 package objetos;
 
+import static java.lang.Math.round;
+
 public class Rectangulo extends Bidimensional{
     private double largo;
     private double ancho;
@@ -54,8 +56,8 @@ public class Rectangulo extends Bidimensional{
 
     @Override
     public String toString() {
-        return "Resctangulo: [ Codigo-> "+codigo+", Perimetro-> "+perimetro+
-                ", Area-> "+area+", Largo-> "+largo+", Ancho-> "+ancho+" ].";
+        return "Resctangulo: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
+                ", Area-> "+round(area*100)/100d+", Largo-> "+largo+", Ancho-> "+ancho+" ].";
     }
     
     

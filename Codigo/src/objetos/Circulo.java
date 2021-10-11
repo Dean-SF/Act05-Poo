@@ -1,6 +1,7 @@
 package objetos;
 
 import static java.lang.Math.pow;
+import static java.lang.Math.round;
 
 public class Circulo extends Bidimensional{
     private double radio;
@@ -48,7 +49,7 @@ public class Circulo extends Bidimensional{
 
     @Override
     public String toString() {
-        return "Circulo: [ Codigo-> "+codigo+", Perimetro-> "+perimetro+
-                ", Area-> "+area+", Radio-> "+radio+" ].";
+        return "Circulo: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
+                ", Area-> "+round(area*100)/100d+", Radio-> "+radio+" ].";
     }
 }

@@ -1,5 +1,7 @@
 package objetos;
 
+import static java.lang.Math.round;
+
 public class Triangulo extends Bidimensional{
     private double base;
     private double lado2;
@@ -70,8 +72,8 @@ public class Triangulo extends Bidimensional{
 
     @Override
     public String toString() {
-        return "Triangulo: [ Codigo-> "+codigo+", Perimetro-> "+perimetro+
-                ", Area-> "+area+", Base-> "+base+", Altura-> "+altura+
+        return "Triangulo: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
+                ", Area-> "+round(area*100)/100d+", Base-> "+base+", Altura-> "+altura+
                 ", Lados-> "+lado2+"-"+lado3+" ].";
     }
 }

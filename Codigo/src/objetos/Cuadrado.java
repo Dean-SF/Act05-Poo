@@ -1,5 +1,6 @@
 package objetos;
-import static java.lang.Math.pow;
+
+import static java.lang.Math.round;
 
 public class Cuadrado extends Bidimensional{
    private double lado;
@@ -8,8 +9,8 @@ public class Cuadrado extends Bidimensional{
    }
    public Cuadrado(double lado, int codigo){
        this.lado = lado;
-       super.area = pow(lado,2);
-       super.perimetro = lado*lado;
+       super.area = lado*lado;
+       super.perimetro = lado*4;
        super.codigo = codigo;
    }
 
@@ -47,7 +48,7 @@ public class Cuadrado extends Bidimensional{
 
     @Override
     public String toString() {
-        return "Cuadrado: [ Codigo-> "+codigo+", Perimetro-> "+perimetro+
-                ", Area-> "+area+", Lado-> "+lado+" ].";
+        return "Cuadrado: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
+                ", Area-> "+round(area*100)/100d+", Lado-> "+lado+" ].";
     }
 }
