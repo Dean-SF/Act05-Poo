@@ -76,7 +76,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         botonRandomizador.setText("RANDOMIZAR");
 
         //Visual
-        scrollVisual.setBounds(10,45,350,630);
+        scrollVisual.setBounds(10,45,365,630);
         visualFiguras.setLineWrap(true);
         visualFiguras.setWrapStyleWord(true);
         visualFiguras.setEditable(false);;
