@@ -74,6 +74,6 @@ public class Triangulo extends Bidimensional{
     public String toString() {
         return "Triangulo: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
                 ", Area-> "+round(area*100)/100d+", Base-> "+base+", Altura-> "+altura+
-                ", Lados-> "+lado2+"-"+lado3+" ].";
+                ", Lados-> "+lado2+"-"+lado3+", Tipo: 2D"+" ].";
     }
 }

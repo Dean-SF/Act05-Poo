@@ -49,6 +49,6 @@ public class Cuadrado extends Bidimensional{
     @Override
     public String toString() {
         return "Cuadrado: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
-                ", Area-> "+round(area*100)/100d+", Lado-> "+lado+" ].";
+                ", Area-> "+round(area*100)/100d+", Lado-> "+lado+", Tipo: 2D"+" ].";
     }
 }

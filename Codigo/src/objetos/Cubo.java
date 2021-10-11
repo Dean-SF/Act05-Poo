@@ -22,10 +22,10 @@ public class Cubo extends Tridimensional{
     }
      @Override
     public String toString() {
-        return "Cubo: " + " Lado: " + this.lado + 
+        return "Cubo: [" + " Lado: " + this.lado + 
                         ", Area: " + this.getArea()+
                         ", Perimetro: " + this.getPerimetro() +
-                        ", Tipo: 3D" +'\n';
+                        ", Tipo: 3D" +" ]."+'\n';
     }
     public void setLado(double lado) {
         this.lado = lado;

@@ -31,10 +31,10 @@ public class Piramide extends Tridimensional{
 
     @Override
     public String toString() {
-        return "Piramide: " + "Lado: " + lado + 
+        return "Piramide: [" + "Lado: " + lado + 
                             ", Area: " + this.getArea()+
                             ", Perimetro: "+ this.getPerimetro() + 
-                            ", Tipo: 3D" + '\n';
+                            ", Tipo: 3D" +" ]."+ '\n';
     }
 
     public void setAltura(double altura) {

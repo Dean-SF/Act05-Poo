@@ -50,6 +50,6 @@ public class Circulo extends Bidimensional{
     @Override
     public String toString() {
         return "Circulo: [ Codigo-> "+codigo+", Perimetro-> "+round(perimetro*100)/100d+
-                ", Area-> "+round(area*100)/100d+", Radio-> "+radio+" ].";
+                ", Area-> "+round(area*100)/100d+", Radio-> "+radio+", Tipo: 2D"+" ].";
     }
 }
