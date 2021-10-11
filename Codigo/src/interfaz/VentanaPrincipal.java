@@ -211,14 +211,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
             visualFiguras.append(actual.toString());
             visualFiguras.append(""+'\n');
             
-            if(actual instanceof Triangulo){
-                visualTriangulo.append(actual.toString());
-                visualTriangulo.append(""+'\n');
             
-            }else if(actual instanceof Cilindro){
-                visualCilindros.append(actual.toString());
-                visualCilindros.append(""+'\n');
-            }
         }
     }
     
@@ -227,6 +220,14 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
             if(actual instanceof Cilindro){
                 visualCilindros.append(actual.toString());
                 visualCilindros.append(""+'\n');
+            }
+        }
+    }
+    private void llenarTextoTriangulos(){
+        for(Figura actual : gestor.getFiguras()){
+            if(actual instanceof Triangulo){
+                visualTriangulo.append(actual.toString());
+                visualTriangulo.append(""+'\n');
             }
         }
     }
@@ -269,6 +270,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         llenarDatosGenerales();
         llenarTextoTotal();
         llenarTextoCilindros();
+        llenarTextoTriangulos();
     }
     
     @Override
