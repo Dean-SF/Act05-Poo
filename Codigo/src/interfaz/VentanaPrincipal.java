@@ -214,10 +214,4 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
             crearFiguras();
         }
     }
-<<<<<<< Updated upstream
-
-=======
-    
->>>>>>> Stashed changes
-    
 }
