@@ -1,6 +1,6 @@
 package objetos;
 
-public abstract class Tridimensional extends Figuras{
+public abstract class Tridimensional extends Figura{
     protected double area;
     
     public abstract void setArea(double area);

@@ -9,38 +9,29 @@ import static java.lang.Math.pow;
  *
  * @author davidmorales
  */
-public class Cilindro extends Tridimensional{
-    private double altura;
+public class Cono extends Tridimensional{
+    private double inclinacion;
     private double radio;
-    public Cilindro(double radio, double altura,int codigo) {
+    public Cono(double radio, double inclinacion,int codigo) {
         
-        this.radio = radio;  
-        this.altura = altura;
-        super.area = ((2 * Math.PI) * this.radio * altura) + ((2 * Math.PI) * pow(this.radio, 2.0));
+        this.radio = radio; 
+        super.area = (Math.PI * this.radio * inclinacion) + (Math.PI * pow(this.radio, 2.0));
         super.perimetro = ((2 * Math.PI) * this.radio);
         super.codigo = codigo;
     }
 
-    public void setAltura(double altura) {
-        this.altura = altura;
-    }
-    public double getAltura() {
-        return altura;
-    }
     
     @Override
     public String toString() {
-        return "Cilindro: " +   " Radio: " + this.radio +
-                                ", Altura: " + altura +
-                                ", Area : " + this.getArea() +
-                                ", Perimetro: " + getPerimetro() +
-                                ", Tipo: 3D"+'\n';
+        return "Cono: " +   " Radio: " + this.radio +
+                            ", Inclinación: " + inclinacion +
+                            ", Area: " + this.getArea() + 
+                            ", Perimetro: " + getPerimetro() +
+                            ", Tipo: 3D" +'\n';
     }
-  
     public void setRadio(double radio) {
         this.radio = radio;
     }
-
     @Override
     public void setArea(double area) {
         super.area = area;
@@ -54,11 +45,9 @@ public class Cilindro extends Tridimensional{
     public void setCodigo(int codigo) {
         super.codigo = codigo;
     }
-    
-    public double getRadio(){
-        return this.radio;
+    public void setInclinacion(double inclinacion) {
+        this.inclinacion = inclinacion;
     }
-
     @Override
     public double getPerimetro() {
         return super.perimetro;
@@ -72,4 +61,13 @@ public class Cilindro extends Tridimensional{
     public int getCodigo() {
         return super.codigo;
     }
+    public double getRadio(){
+        return this.radio;
+    }
+    public double getInclinacion() {
+        return inclinacion;
+    }
+
+    
 }
+
