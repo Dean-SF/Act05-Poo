@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.HashSet;
 import objetos.Cilindro;
 import objetos.Circulo;
 import objetos.Cono;
@@ -29,6 +30,7 @@ import objetos.Triangulo;
 public class VentanaPrincipal extends JFrame implements ActionListener {
     //Gestor
     GestorFiguras gestor = new GestorFiguras();
+    private int cantidadId = 1;
     
     //Letras
     private Font fBotones = new Font("Segoe UI",Font.PLAIN,18);
@@ -174,33 +176,34 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
             
             if(randomTipo==0){
                 randomMedida = Math.random()*100+1;
-                nueva = new Cuadrado(randomMedida,i);
+                nueva = new Cuadrado(randomMedida,cantidadId);
             }else if(randomTipo==1){
                 datos = generarDatos(4);
                 nueva = new Triangulo((double)(datos.get(0)),(double)(datos.get(1)),
-                        (double)(datos.get(2)),(double)(datos.get(3)),i);
+                        (double)(datos.get(2)),(double)(datos.get(3)),cantidadId);
             }else if(randomTipo==2){
                 datos = generarDatos(2);
-                nueva = new Rectangulo((double)(datos.get(0)),(double)(datos.get(1)),i);
+                nueva = new Rectangulo((double)(datos.get(0)),(double)(datos.get(1)),cantidadId);
             }else if(randomTipo==3){
                 randomMedida = Math.random()*100+1;
-                nueva = new Circulo(randomMedida,i);
+                nueva = new Circulo(randomMedida,cantidadId);
             }else if(randomTipo==4){ 
                 datos = generarDatos(3);
                 nueva = new Piramide((double)(datos.get(0)),(double)(datos.get(1)),
-                        (double)(datos.get(2)),i);
+                        (double)(datos.get(2)),cantidadId);
             }else if(randomTipo==5){
                 datos = generarDatos(2);
-                nueva = new Cono((double)(datos.get(0)),(double)(datos.get(1)),i);
+                nueva = new Cono((double)(datos.get(0)),(double)(datos.get(1)),cantidadId);
             }else if(randomTipo==6){
                 datos = generarDatos(2);
-                nueva = new Cilindro((double)(datos.get(0)),(double)(datos.get(1)),i);
+                nueva = new Cilindro((double)(datos.get(0)),(double)(datos.get(1)),cantidadId);
             }else{
                 randomMedida = Math.random()*100+1;
-                nueva = new Cubo(randomMedida,i);
+                nueva = new Cubo(randomMedida,cantidadId);
             }
             System.out.println(nueva);
             gestor.agregarFigura(nueva);
+            cantidadId +=1;
         }
     }
     
@@ -209,7 +212,36 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     }
     
     private void llenarDatosGenerales(){
-        System.out.println("a");
+        lF2D.setText("Figuras 2D: "+gestor.getCantidad2D());
+        lF3D.setText("Figuras 3D: "+gestor.getCantidad3D());
+        int Ci = 0, Cu = 0, Re = 0, Ti = 0, Pi = 0, Cil = 0, Co = 0, Cub = 0;
+        for(Figura actual : gestor.getFiguras()){
+            if(actual instanceof Circulo){
+                Ci+=1;
+            }else if(actual instanceof Cuadrado){
+                Cu+=1;
+            }else if(actual instanceof Rectangulo){
+                Re+=1;
+            }else if(actual instanceof Triangulo){
+                Ti+=1;
+            }else if(actual instanceof Piramide){
+                Pi+=1;
+            }else if(actual instanceof Cilindro){
+                Cil+=1;
+            }else if(actual instanceof Cono){
+                Co+=1;
+            }else{
+                Cub+=1;
+            }
+        }
+        lCirculo.setText("Circulos: "+Ci);
+        lCuadrado.setText("Cuadrados: "+Cu);
+        lRectagunlo.setText("Rectangulos: "+Re);
+        lTriangulo.setText("Triangulos: "+Ti);
+        lPiramide.setText("Piramides: "+Pi);
+        lCilindro.setText("Cilindros: "+Cil);
+        lCono.setText("Conos: "+Co);
+        lCubo.setText("Cubos: "+Cub);
     }
     
     private void actualizar(){
