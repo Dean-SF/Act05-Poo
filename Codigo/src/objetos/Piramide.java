@@ -14,16 +14,18 @@ public class Piramide extends Tridimensional{
     private double altura;
     private double ha;// esto es la altura del lado
     private double lado;
+    private double inclinacion;
     public Piramide() {
 
     }
 
-    public Piramide(double altura,double lado,int codigo) {
+    public Piramide(double altura,double lado,double inclinacion,int codigo) {
         this.altura = altura;
         this.lado = lado;
+        this.inclinacion = inclinacion;
         this.ha = sqrt(pow(altura,2) + pow(this.lado/2, 2.0));// formula para averiguar la altura del lado
         super.area = (this.lado * this.lado) + (2*this.lado * ha);
-        super.perimetro = 1/3 * pow(lado,2) * altura ;
+        super.perimetro = (this.lado * 4) + (inclinacion * 4);
         super.codigo = codigo;
     }
 
