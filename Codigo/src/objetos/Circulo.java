@@ -47,12 +47,17 @@ public class Circulo extends Bidimensional{
         return codigo;
     }
 
+    public double redondear(double num){
+        double nuevo = round(num*100)/100d;
+        return nuevo;
+    } 
+    
     @Override
     public String toString() {
         return "Circulo: [ Codigo-> "+codigo+
-                ", Perimetro-> "+round(perimetro*100)/100d+
-                ", Area-> "+round(area*100)/100d+
-                ", Radio-> "+radio+
+                ", Perimetro: "+redondear(perimetro)+
+                ", Area: "+redondear(area)+
+                ",\t \t Radio "+redondear(radio)+
                 ", Tipo: 2D ]."+'\n';
     }
 }

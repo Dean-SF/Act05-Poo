@@ -54,12 +54,18 @@ public class Rectangulo extends Bidimensional{
         return codigo;
     }
 
+    public double redondear(double num){
+        double nuevo = round(num*100)/100d;
+        return nuevo;
+    } 
+    
     @Override
     public String toString() {
         return "Resctangulo: [ Codigo-> "+codigo+
-                ", Perimetro-> "+round(perimetro*100)/100d+
-                ", Area-> "+round(area*100)/100d+", Largo-> "+largo+
-                ", Ancho-> "+ancho+
+                ", Perimetro: "+redondear(perimetro)+
+                ", Area: "+redondear(area)+
+                ", Largo: "+redondear(largo)+
+                ", Ancho: "+redondear(ancho)+
                 ", Tipo: 2D ]."+'\n';
     }
     

@@ -200,7 +200,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
                 randomMedida = Math.random()*100+1;
                 nueva = new Cubo(randomMedida,cantidadId);
             }
-            System.out.println(nueva);
             gestor.agregarFigura(nueva);
             cantidadId +=1;
         }
@@ -210,8 +209,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         for(Figura actual : gestor.getFiguras()){
             visualFiguras.append(actual.toString());
             visualFiguras.append(""+'\n');
-            
-            
         }
     }
     

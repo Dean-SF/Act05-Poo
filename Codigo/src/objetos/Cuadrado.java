@@ -46,12 +46,17 @@ public class Cuadrado extends Bidimensional{
         return codigo;
     }
 
+    public double redondear(double num){
+        double nuevo = round(num*100)/100d;
+        return nuevo;
+    } 
+    
     @Override
     public String toString() {
         return "Cuadrado: [ Codigo-> "+codigo+
-                ", Perimetro-> "+round(perimetro*100)/100d+
-                ", Area-> "+round(area*100)/100d+
-                ", Lado-> "+lado+
+                ", Perimetro: "+redondear(perimetro)+
+                ", Area: "+redondear(area)+
+                ", \t \t Lado: "+redondear(lado)+
                 ", Tipo: 2D ]."+'\n';
     }
 }

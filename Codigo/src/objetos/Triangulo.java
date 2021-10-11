@@ -78,11 +78,11 @@ public class Triangulo extends Bidimensional{
     @Override
     public String toString() {
         return "Triangulo: [ Codigo-> "+codigo+
-                ", Perimetro-> "+redondear(perimetro)+
-                ", Area-> "+redondear(area)+
-                ", Base-> "+redondear(base)+
-                ", Altura-> "+redondear(altura)+
-                ", Lados-> "+redondear(lado2)+" y "+redondear(lado3)+
+                ", Perimetro: "+redondear(perimetro)+
+                ", \t \t Area: "+redondear(area)+
+                ", Base: "+redondear(base)+
+                ", Altura: "+redondear(altura)+
+                ", \t \t Lados: "+redondear(lado2)+" y "+redondear(lado3)+
                 ", Tipo: 2D ]."+'\n';
     }
 }
