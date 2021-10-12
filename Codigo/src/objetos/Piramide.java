@@ -89,4 +89,21 @@ public class Piramide extends Tridimensional{
         return altura;
     }
 
+    public void setHa(double ha) {
+        this.ha = ha;
+    }
+
+    public void setInclinacion(double inclinacion) {
+        this.inclinacion = inclinacion;
+    }
+
+    public double getHa() {
+        return ha;
+    }
+
+    public double getInclinacion() {
+        return inclinacion;
+    }
+    
+    
 }
