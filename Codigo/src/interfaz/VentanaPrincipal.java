@@ -96,7 +96,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         scrollVisual.setBounds(10,45,365,630);
         visualFiguras.setLineWrap(true);
         visualFiguras.setWrapStyleWord(true);
-        visualFiguras.setEditable(false);;
+        visualFiguras.setEditable(false);
         lFiguras.setFont(fTitulo);
         lFiguras.setBounds(10,10,500,33);
         vSeparador1.setBounds(380,10,60,665);
@@ -125,7 +125,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         lDetalleTriangulo.setBounds(750, 10, 500, 33);
         visualTriangulo.setLineWrap(true);
         visualTriangulo.setWrapStyleWord(true);
-        visualTriangulo.setEditable(false);;
+        visualTriangulo.setEditable(false);
         scrollTriangulo.setBounds(750,45,275,300);
 
         hSeparador2.setBounds(750,350,275,60);
@@ -134,7 +134,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         lDetalleCilindros.setBounds(750,350,500, 33);
         visualCilindros.setLineWrap(true);
         visualCilindros.setWrapStyleWord(true);
-        visualCilindros.setEditable(false);;
+        visualCilindros.setEditable(false);
         scrollCilindros.setBounds(750,385,275,290);
         
 

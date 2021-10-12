@@ -40,7 +40,7 @@ public class Cilindro extends Tridimensional{
         return "Cilindro: [" +  "Codigo-> "+codigo+
                                 ", Radio: " + redondear(radio) +
                                 ", Altura: " + redondear(altura) +
-                                ", \t Area : " + redondear(area) +
+                                ", Area : " + redondear(area) +
                                 ", Perimetro: " + redondear(perimetro) +
                                 ", Tipo: 3D ]."+'\n';
     }
