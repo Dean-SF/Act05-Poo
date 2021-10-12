@@ -8,15 +8,15 @@ import objetos.Figura;
 import objetos.Rectangulo;
 import objetos.Triangulo;
 
-import java.awt.Shape;
-
 public class GestorFiguras{
     private ArrayList<Figura> figuras = new ArrayList<Figura>();
     private int cantidadTotal;
     private int cantidad2D;
     private int cantidad3D;
+    private int maximosEjempares = 0;
+    private String ejemplar = null;
 
-    private String figura2DMasEjemplares() {
+    private void figura2DMasEjemplares() {
         int[] cantidades = {0,0,0,0};
         for(Figura actual : figuras) {
             if(actual instanceof Circulo){
@@ -31,23 +31,29 @@ public class GestorFiguras{
         }
         int max = 0;
         int index = 0;
-        for(int i = 0; i < 5; i++) {
+        for(int i = 0; i < 4; i++) {
             if(max < cantidades[i]) {
                 max = cantidades[i];
                 index = i;
             }
         }
+        maximosEjempares = max;
         switch (index) {
             case 0:
-                return "circulo";
+                ejemplar = "circulo";
+                break;
             case 1:
-                return "cuadrado";
+                ejemplar = "cuadrado";
+                break;
             case 2:
-                return "rectangulo";
+                ejemplar = "rectangulo";
+                break;
             case 3:
-                return "triangulo";
+                ejemplar = "triangulo";
+                break;
             default:
-                return "N/A";
+                ejemplar = "N/A";
+                break;
         }
     }
 
@@ -55,6 +61,14 @@ public class GestorFiguras{
         cantidadTotal = 0;
         cantidad2D = 0;
         cantidad3D = 0;
+    }
+
+    public void setEjemplar(String ejemplar) {
+        this.ejemplar = ejemplar;
+    }
+
+    public void setMaximosEjempares(int maximosEjempares) {
+        this.maximosEjempares = maximosEjempares;
     }
 
     public void setFiguras(ArrayList<Figura> figuras) {
@@ -88,6 +102,16 @@ public class GestorFiguras{
     public int getCantidad3D() {
         return cantidad3D;
     }
+
+    public String getEjemplar() {
+        figura2DMasEjemplares();
+        return ejemplar;
+    }
+
+    public int getMaximosEjempares() {
+        figura2DMasEjemplares();
+        return maximosEjempares;
+    }
     
     public void agregarFigura(Figura figura){
         cantidadTotal +=1;
@@ -99,20 +123,4 @@ public class GestorFiguras{
         figuras.add(figura);
     }
 
-    // por desarrollar
-    public Shape dibujo2DMasEjemplares(){
-        String figura = figura2DMasEjemplares();
-        switch (figura) {
-            case "circulo":
-                return null;
-            case "cuadrado":
-                return null;
-            case "rectangulo":
-                return null;
-            case "triangulo":
-                return null;
-            default:
-                return null;
-        }
-    }
 }

@@ -23,6 +23,8 @@ import objetos.Piramide;
 import objetos.Rectangulo;
 import objetos.Triangulo;
 
+
+
 /** 
  * Clase con la ventan principal del Act05
 */
@@ -61,7 +63,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     private JSeparator hSeparador1 = new JSeparator(SwingConstants.HORIZONTAL);
 
     private JLabel lDibujo = new JLabel("Figura 2D con más ejemplares:");
-    private Dibujo Dibujo = new Dibujo();
+    private Dibujo dibujo = new Dibujo();
 
     private JSeparator vSeparador2 = new JSeparator(SwingConstants.VERTICAL);
 
@@ -117,7 +119,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 
         lDibujo.setBounds(390,350,500, 33);
         lDibujo.setFont(fTitulo);
-        Dibujo.setBounds(390, 390, 300, 300);
+        dibujo.setBounds(390, 390, 340, 300);
         
         vSeparador2.setBounds(740,10,60,665);
 
@@ -136,7 +138,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         visualCilindros.setWrapStyleWord(true);
         visualCilindros.setEditable(false);
         scrollCilindros.setBounds(750,385,275,290);
-        
 
         this.add(botonRandomizador);
         this.add(lFiguras);
@@ -151,11 +152,11 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         this.add(hSeparador2);
         this.add(lDetalleCilindros);
         this.add(scrollCilindros);
-        this.add(Dibujo);
+        this.add(dibujo);
         
     }
     
-    private ArrayList generarDatos(int num){
+    private ArrayList<Double> generarDatos(int num){
         ArrayList<Double> datos = new ArrayList<Double>();
         double random;
         for(int i = 0; i<num; i++){
@@ -167,7 +168,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     
     private void crearFiguras(){
         double randomMedida = 0;
-        ArrayList datos;
+        ArrayList<Double> datos;
         int random = (int)(Math.random()*(50-30+1)+30);
         Figura nueva;
         for(int i = 0; i<random; i++){
@@ -206,6 +207,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     }
     
     private void llenarTextoTotal(){
+        visualFiguras.setText("");
         for(Figura actual : gestor.getFiguras()){
             visualFiguras.append(actual.toString());
             visualFiguras.append(""+'\n');
@@ -213,6 +215,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     }
     
     private void llenarTextoCilindros(){
+        visualCilindros.setText("");
         for(Figura actual : gestor.getFiguras()){
             if(actual instanceof Cilindro){
                 visualCilindros.append(actual.toString());
@@ -221,6 +224,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         }
     }
     private void llenarTextoTriangulos(){
+        visualTriangulo.setText("");
         for(Figura actual : gestor.getFiguras()){
             if(actual instanceof Triangulo){
                 visualTriangulo.append(actual.toString());
@@ -263,11 +267,13 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     }
     
     private void actualizar(){
+        gestor = new GestorFiguras();
         crearFiguras();
         llenarDatosGenerales();
         llenarTextoTotal();
         llenarTextoCilindros();
         llenarTextoTriangulos();
+        dibujo.dibujar(gestor.getEjemplar(), gestor.getMaximosEjempares());
     }
     
     @Override
