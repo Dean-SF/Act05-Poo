@@ -58,6 +58,6 @@ public class Circulo extends Bidimensional{
                 ", Perimetro: "+redondear(perimetro)+
                 ", Area: "+redondear(area)+
                 ",\t \t Radio "+redondear(radio)+
-                ", Tipo: 2D ]."+'\n';
+                ", Tipo: 2D ].\n";
     }
 }

@@ -66,7 +66,7 @@ public class Rectangulo extends Bidimensional{
                 ", Area: "+redondear(area)+
                 ", Largo: "+redondear(largo)+
                 ", Ancho: "+redondear(ancho)+
-                ", Tipo: 2D ]."+'\n';
+                ", Tipo: 2D ].\n";
     }
     
     

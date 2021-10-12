@@ -57,6 +57,6 @@ public class Cuadrado extends Bidimensional{
                 ", Perimetro: "+redondear(perimetro)+
                 ", Area: "+redondear(area)+
                 ", \t \t Lado: "+redondear(lado)+
-                ", Tipo: 2D ]."+'\n';
+                ", Tipo: 2D ].\n";
     }
 }

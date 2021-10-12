@@ -5,6 +5,7 @@
  */
 package objetos;
 import static java.lang.Math.pow;
+import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 /**
  *
@@ -28,14 +29,19 @@ public class Piramide extends Tridimensional{
         super.perimetro = (this.lado * 4) + (inclinacion * 4);
         super.codigo = codigo;
     }
+    
+    public double redondear(double num){
+        double nuevo = round(num*100)/100d;
+        return nuevo;
+    } 
 
     @Override
     public String toString() {
         return "Piramide: [" + "Codigo-> "+codigo+
-                            ", Lado: " + lado + 
-                            ", Area: " + this.getArea()+
-                            ", Perimetro: "+ this.getPerimetro() + 
-                            ", Tipo: 3D" +" ]."+ '\n';
+                            ", Lado: " + redondear(lado) + 
+                            ", Area: " + redondear(area)+
+                            ", \t \t Perimetro: "+ redondear(perimetro) + 
+                            ", Tipo: 3D ]."+ '\n';
     }
 
     public void setAltura(double altura) {

@@ -6,6 +6,7 @@
 package objetos;
 
 import static java.lang.Math.pow;
+import static java.lang.Math.round;
 
 /**
  *
@@ -20,13 +21,19 @@ public class Cubo extends Tridimensional{
         super.perimetro = lado * 12;
         super.codigo = codigo;
     }
+    
+    public double redondear(double num){
+        double nuevo = round(num*100)/100d;
+        return nuevo;
+    } 
+    
      @Override
     public String toString() {
         return "Cubo: [" + "Codigo-> "+codigo+
-                        ", Lado: " + this.lado + 
-                        ", Area: " + this.getArea()+
-                        ", Perimetro: " + this.getPerimetro() +
-                        ", Tipo: 3D" +" ]."+'\n';
+                        ", Lado: " + redondear(lado) + 
+                        ", Area: " + redondear(area)+
+                        ", \t \t Perimetro: " + redondear(perimetro) +
+                        ", Tipo: 3D ]."+'\n';
     }
     public void setLado(double lado) {
         this.lado = lado;

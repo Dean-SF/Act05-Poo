@@ -5,6 +5,7 @@
  */
 package objetos;
 import static java.lang.Math.pow;
+import static java.lang.Math.round;
 /**
  *
  * @author davidmorales
@@ -14,22 +15,26 @@ public class Cono extends Tridimensional{
     private double radio;
     public Cono(){}
     public Cono(double radio, double inclinacion,int codigo) {
-        
+        this.inclinacion = inclinacion;
         this.radio = radio; 
         super.area = (Math.PI * this.radio * inclinacion) + (Math.PI * pow(this.radio, 2.0));
         super.perimetro = ((2 * Math.PI) * this.radio);
         super.codigo = codigo;
     }
 
+    public double redondear(double num){
+        double nuevo = round(num*100)/100d;
+        return nuevo;
+    } 
     
     @Override
     public String toString() {
         return "Cono: [" +  "Codigo-> "+codigo+ 
-                            ", Radio: " + this.radio +
-                            ", Inclinación: " + inclinacion +
-                            ", Area: " + this.getArea() + 
-                            ", Perimetro: " + getPerimetro() +
-                            ", Tipo: 3D" +" ]."+'\n';
+                            ", Radio: " + redondear(radio) +
+                            ", Inclinación: " + redondear(inclinacion) +
+                            ", \t \t Area: " + redondear(area) + 
+                            ", Perimetro: " + redondear(perimetro) +
+                            ", Tipo: 3D ]."+'\n';
     }
     public void setRadio(double radio) {
         this.radio = radio;

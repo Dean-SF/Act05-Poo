@@ -5,6 +5,7 @@
  */
 package objetos;
 import static java.lang.Math.pow;
+import static java.lang.Math.round;
 /**
  *
  * @author davidmorales
@@ -29,14 +30,19 @@ public class Cilindro extends Tridimensional{
         return altura;
     }
     
+    public double redondear(double num){
+        double nuevo = round(num*100)/100d;
+        return nuevo;
+    } 
+    
     @Override
     public String toString() {
         return "Cilindro: [" +  "Codigo-> "+codigo+
-                                ", Radio: " + this.radio +
-                                ", Altura: " + altura +
-                                ", Area : " + this.getArea() +
-                                ", Perimetro: " + getPerimetro() +
-                                ", Tipo: 3D"+" ]."+'\n';
+                                ", Radio: " + redondear(radio) +
+                                ", Altura: " + redondear(altura) +
+                                ", \t Area : " + redondear(area) +
+                                ", Perimetro: " + redondear(perimetro) +
+                                ", Tipo: 3D ]."+'\n';
     }
   
     public void setRadio(double radio) {
