@@ -156,7 +156,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     }
     
     private ArrayList generarDatos(int num){
-        ArrayList datos = new ArrayList();
+        ArrayList<Double> datos = new ArrayList<Double>();
         double random;
         for(int i = 0; i<num; i++){
             random = Math.random()*100+1;
